@@ -224,16 +224,7 @@
 }
 		
 		
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 40px 80px;
-            position: relative;
-            background: radial-gradient(ellipse at center top, #0f1419 0%, var(--dark-bg) 60%);
-            z-index: 1;
-        }
+
 		
 		
 
@@ -259,10 +250,20 @@
 			word-break: break-word;
 	}
         
-        .hero h1 strong {
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
+.hero h1 strong {
+  font-weight: 600;
+  background: linear-gradient(90deg, #36a2f0, #0895e5, #36a2f0);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blueGradientScroll 10s linear infinite;
+}
+
+@keyframes blueGradientScroll {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
         
         .hero-subtitle {
             font-size: 18px;
@@ -967,8 +968,8 @@ body::after {
                     <p style="color: var(--text-primary); font-size: 18px; margin-bottom: 8px;">Meet the Owner</p>
                     <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 32px;">Text me: (209) 628-5830</p>
                     <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        Hi, my name is Chris. I'm in school saving for college, running this business as the sole proprietor. When you book, you're texting me directly. No receptionist, no middleman. I handle everything from scheduling to the actual detailing work. Your car gets my full attention, not handed off to someone else.
-                    </p>
+                      Hi, my name is Chris. I'm in school saving for college, running this business as the sole proprietor. When you call or text, you're contacting me directly. No receptionist, no middleman. I handle everything from scheduling to the actual detailing work. Your car gets my full attention, not handed off to someone else.
+                  </p>
                     <a href="#booking" class="btn-primary">Check Availability</a>
                 </div>
             </div>
@@ -1063,9 +1064,9 @@ body::after {
 </p>
 
 <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-    <img src="meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8;">
-    <img src="p&slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8;">
-    <img src="Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/p%26slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8;">
 </div>
 
     </section>
