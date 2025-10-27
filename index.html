@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shield & Shine - Professional Auto Detailing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,19 +25,20 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: var(--dark-bg);
             color: var(--text-primary);
             line-height: 1.6;
-            font-weight: 400;
-            letter-spacing: 0.02em;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            font-size: 16px;
             overflow-x: hidden;
         }
         
         /* Typography */
         h1, h2, h3 {
-            font-weight: 400;
-            letter-spacing: -0.02em;
+            font-weight: 500;
+            letter-spacing: -0.04em;
         }
         
         /* Navigation */
@@ -61,14 +65,14 @@
         
         .logo {
             font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
             color: var(--text-primary);
         }
         
         .logo span {
             color: var(--primary-blue);
-            font-weight: 300;
+            font-weight: 500;
         }
         
         .nav-links {
@@ -81,7 +85,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -112,7 +116,7 @@
             border-radius: 100px;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: 1px solid var(--primary-blue);
         }
@@ -154,7 +158,7 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
         
-        @media (max-width: 768px) {
+        @media (max-width : 833px ){
             .nav-container {
                 padding: 0 20px;
             }
@@ -206,6 +210,20 @@
         }
         
         /* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  background: url("imgs/hero-gradient.webp") center top / cover no-repeat, #0a0a0a;
+  background-attachment: fixed;
+  z-index: 1;
+  overflow: hidden;
+}
+		
+		
         .hero {
             min-height: 100vh;
             display: flex;
@@ -216,28 +234,33 @@
             background: radial-gradient(ellipse at center top, #0f1419 0%, var(--dark-bg) 60%);
             z-index: 1;
         }
-        
+		
+		
+
         .hero-content {
             max-width: 1000px;
             text-align: center;
         }
+		
+		.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
         
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 88px);
-            font-weight: 200;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        @media (min-width: 769px) {
-            .hero h1 {
-                white-space: nowrap;
-            }
-        }
+		.hero h1 {
+			font-size: clamp(32px, 6.2vw, 78px);
+			font-weight: 500;
+			line-height: 1.15;
+			margin-bottom: 24px;
+			animation: fadeInUp 0.8s ease;
+			white-space: normal; /* allows wrapping */
+			letter-spacing: -0.05em;
+			word-break: break-word;
+	}
         
         .hero h1 strong {
-            font-weight: 400;
+            font-weight: 600;
             color: var(--primary-blue);
         }
         
@@ -246,7 +269,7 @@
             color: var(--text-secondary);
             margin-bottom: 48px;
             animation: fadeInUp 0.8s ease 0.1s both;
-            font-weight: 300;
+            font-weight: 500;
         }
         
         @keyframes fadeInUp {
@@ -262,6 +285,7 @@
         
         .hero-buttons {
             display: flex;
+            
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
@@ -275,7 +299,7 @@
             border-radius: 100px;
             text-decoration: none;
             font-size: 15px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: 1px solid var(--primary-blue);
         }
@@ -292,7 +316,7 @@
             border-radius: 100px;
             text-decoration: none;
             font-size: 15px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -315,7 +339,7 @@
         
         .section-header h2 {
             font-size: 48px;
-            font-weight: 200;
+            font-weight: 500;
             margin-bottom: 16px;
         }
         
@@ -368,15 +392,15 @@
         .service-number {
             color: var(--primary-blue);
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 16px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .service-card h3 {
             font-size: 28px;
             margin-bottom: 16px;
-            font-weight: 300;
+            font-weight: 400;
         }
         
         .service-card p {
@@ -389,7 +413,7 @@
         .service-price {
             font-size: 24px;
             color: var(--text-primary);
-            font-weight: 200;
+            font-weight: 500;
         }
         
         .service-price span {
@@ -398,12 +422,35 @@
         }
         
         /* Gallery */
-        .gallery {
-            padding: 120px 40px;
-            background: var(--dark-bg);
-            position: relative;
-            z-index: 2;
-        }
+.gallery {
+  position: relative;
+  overflow: visible;
+  padding: 120px 40px;
+  background: var(--dark-bg);
+  z-index: 2;
+}
+
+
+/* Fade at the top that blends upward into the hero */
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: -160px;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, var(--dark-bg) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* Ensure your text + images sit ABOVE the fade */
+.gallery * {
+  position: relative;
+  z-index: 1;
+}
+
         
         .gallery-grid {
             display: grid;
@@ -458,7 +505,7 @@
         
         .gallery-overlay h4 {
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 8px;
         }
         
@@ -488,8 +535,8 @@
             font-size: 14px;
             color: var(--primary-blue);
             margin-bottom: 16px;
-            font-weight: 500;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         
         .contact-item p {
@@ -526,7 +573,7 @@
         .cta-bar h2 {
             font-size: 36px;
             margin-bottom: 16px;
-            font-weight: 300;
+            font-weight: 500;
         }
         
         .cta-bar p {
@@ -568,38 +615,48 @@
         }
         
         /* Mobile */
-        @media (max-width: 768px) {
-            .services {
-                padding: 80px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 48px;
-            }
-            
-            .services-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-card {
-                padding: 32px 24px;
-            }
-            
-            .gallery-grid {
-                gap: 20px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-            }
-        }
+        @media (max-width : 833px ){
+    .hero {
+        padding: 120px 20px 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(28px, 8vw, 48px);
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+    /* Pills (location + cars detailed) */
+    .hero-content > div[style*="flex;"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Specialty line */
+    .hero-content p[style*="Specializing in"] {
+        font-size: 15px !important;
+        text-align: center;
+        white-space: normal;
+    }
+}
         
         /* Extra small screens */
         @media (max-width: 360px) {
@@ -722,6 +779,25 @@
                 opacity: 0;
             }
         }
+		
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.0025) 0px,
+    rgba(255, 255, 255, 0.0025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+
     </style>
 </head>
 
@@ -782,7 +858,7 @@
             
             <!-- Specialties -->
             <div style="margin-bottom: 32px;">
-                <p style="color: var(--primary-blue); font-size: 16px; margin-bottom: 12px;">Specializing in:</p>
+                <p style="color: var(--primary-blue); font-size: 16px; font-weight: 600; margin-bottom: 12px;">Specializing in:</p>
                 <p style="color: var(--text-secondary); font-size: 15px;">
                     Paint Sealant Protection • Interior Deep Cleaning • Same-Day Service
                 </p>
@@ -803,13 +879,13 @@
 
     <section class="gallery" id="work">
         <div class="section-header">
-            <h2>Recent Work</h2>
+            <h2 style="font-weight: 400;">Recent Work</h2>
             <p>Real cars, real results</p>
         </div>
         
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="imgs/agent-j-YVInCqpOBYQ-unsplash (1).jpg" alt="Detail work">
+                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (1).jpg" alt="Detail work">
                 <div class="gallery-overlay">
                     <h4>Full Shield & Shine</h4>
                     <p>3 hours • Complete transformation</p>
@@ -825,7 +901,7 @@
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-v9yMpglGYQA-unsplash.jpg" alt="Detail work">
+                <img src="imgs/agent-j-v9yMpgIGYQA-unsplash.jpg" alt="Detail work">
                 <div class="gallery-overlay">
                     <h4>Interior Deep Clean</h4>
                     <p>Stains removed, surfaces protected</p>
@@ -841,7 +917,7 @@
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-YVInCqpOBYQ-unsplash (2).png" alt="Detail work">
+                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (2).png" alt="Detail work">
                 <div class="gallery-overlay">
                     <h4>Wheel Detail</h4>
                     <p>Brake dust removed, tires dressed</p>
@@ -860,27 +936,27 @@
 
     <section style="padding: 100px 40px; text-align: center;">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 36px; margin-bottom: 24px; font-weight: 300;">Why Shield & Shine?</h2>
+            <h2 style="font-size: 36px; margin-bottom: 24px; font-weight: 400;">Why Shield & Shine?</h2>
             <p style="color: var(--text-secondary); font-size: 17px; line-height: 1.8; margin-bottom: 20px;">
                 I get the job done by any means necessary. If that means spending extra time on brake dust caked onto your rims or making sure every corner of your interior is spotless, that's what will happen. I'll go out of my way to perfect the details because that's what separates exceptional work from mediocre work.
             </p>
             <p style="color: var(--text-secondary); font-size: 17px; line-height: 1.8;">
                 I show up with professional equipment and handle everything on-site. Your driveway, office parking lot, wherever works. Mobile service means lower overhead and more flexibility for you. 
-                <strong style="color: var(--text-primary);">You get quality work without the hassle of a traditional shop.</strong>
+                <span style="color: var(--text-primary); font-weight: 500; white-space: nowrap;">You get quality work without the hassle of a traditional shop.</span>
             </p>
             <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border-subtle);">
                 <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; max-width: 600px; margin: 0 auto;">
                     <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 300;">100%</div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px;">Mobile Service</div>
+                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">100<span style="font-weight: 500; letter-spacing: -0.1em;">%</span></div>
+                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Mobile Service</div>
                     </div>
                     <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 300;">Same Day</div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px;">Available</div>
+                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">Same Day</div>
+                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Available</div>
                     </div>
                     <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 300;">No BS</div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px;">Pricing</div>
+                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">No BS</div>
+                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Pricing</div>
                     </div>
                 </div>
                 <div style="margin-top: 50px;">
@@ -891,8 +967,8 @@
                     <p style="color: var(--text-primary); font-size: 18px; margin-bottom: 8px;">Meet the Owner</p>
                     <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 32px;">Text me: (209) 628-5830</p>
                     <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                      Hi, my name is Chris. I'm in school saving for college, running this business as the sole proprietor. When you book, you're contacting me directly. No receptionist, no middleman. I handle everything from scheduling to the actual detailing work. Your car gets my full attention, not handed off to someone else.
-                  </p>
+                        Hi, my name is Chris. I'm in school saving for college, running this business as the sole proprietor. When you book, you're texting me directly. No receptionist, no middleman. I handle everything from scheduling to the actual detailing work. Your car gets my full attention, not handed off to someone else.
+                    </p>
                     <a href="#booking" class="btn-primary">Check Availability</a>
                 </div>
             </div>
@@ -909,7 +985,7 @@
             <div class="service-card">
                 <div class="service-number">30-45 MIN</div>
                 <h3>Express Wash</h3>
-                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 14px;">Essential shine • Same-day</p>
+                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 15px; font-weight: 500;">Essential shine • Same-day</p>
                 <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2;">
                     <li>✓ Two-stage hand wash & dry</li>
                     <li>✓ Wheels & tires detailed</li>
@@ -922,7 +998,7 @@
             <div class="service-card">
                 <div class="service-number">60-90 MIN</div>
                 <h3>Protect & Shine</h3>
-                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 14px;">Interior refresh & exterior shine</p>
+                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 15px; font-weight: 500;">Interior refresh & exterior shine</p>
                 <p style="margin-bottom: 16px; font-size: 14px; color: var(--text-secondary);">Everything in Express, plus:</p>
                 <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2;">
                     <li>✓ Light interior vacuum</li>
@@ -936,10 +1012,11 @@
             <div class="service-card">
                 <div class="service-number">90-180 MIN</div>
                 <h3>Shield & Shine</h3>
-                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 14px;">Deep restore & long protection</p>
+                <p style="margin-bottom: 20px; color: var(--primary-blue); font-size: 15px; font-weight: 500;">Deep restore & long protection</p>
                 <p style="margin-bottom: 16px; font-size: 14px; color: var(--text-secondary);">Everything in Protect & Shine, plus:</p>
                 <ul style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2;">
-                    <li>✓ Full shampoo & extraction on all fabrics</li>
+                    <li>✓ Heavy-duty interior vacuum</li>
+                    <li>✓ Shampoo & extraction on all fabrics</li>
                     <li>✓ Clay bar decontamination</li>
                     <li>✓ 6-month paint sealant</li>
                     <li>✓ Headlight restoration</li>
@@ -953,33 +1030,44 @@
     <section style="padding: 100px 40px; background: var(--dark-bg);">
         <div style="max-width: 900px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 42px; font-weight: 200; margin-bottom: 20px;">Understand What You're Getting</h2>
+            <h2 style="font-size: 42px; font-weight: 500; margin-bottom: 20px;">Understand What You're Getting</h2>
             <p style="color: var(--text-secondary); font-size: 17px;">Quality work means being clear about what actually happens to your car and why each step matters.</p>
         </div>
         
             <div style="color: var(--text-secondary); font-size: 16px; line-height: 1.8;">
-            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px; margin-top: 48px;">Two-Stage Hand Wash</h3>
+            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Two-Stage Hand Wash</h3>
             <p style="margin-bottom: 32px;">I start with a heavy foam bath using a wash mitt to lift and remove the bulk of the dirt and grime. Then I come back around with a lighter foam application and work through every detail with quality microfiber towels and detailing brushes. I'm talking wheels, grills, decals, trim, door jambs, every corner and crevice. This isn't a quick rinse and go. I'm meticulous about getting into the spots most people skip because those details are what make the difference between a clean car and a properly detailed one.</p>
             
-            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px; margin-top: 48px;">Clay Bar Decontamination</h3>
+            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Clay Bar Decontamination</h3>
             <p style="margin-bottom: 32px;">Over time, your paint collects contaminants that regular washing can't remove. Tree sap, industrial fallout, rail dust, road tar, overspray from construction. It all builds up and bonds to your clear coat. A clay bar treatment physically removes these embedded particles without damaging the paint. You can actually feel the difference when you run your hand across the surface afterward. It goes from textured to glass smooth. This is what prepares your paint for protection and brings back that clean, responsive feel.</p>
             
-            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px; margin-top: 48px;">Interior Vacuum & Deep Cleaning</h3>
+            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Interior Vacuum & Deep Cleaning</h3>
             <p style="margin-bottom: 32px;">Interiors take a beating. Dirt gets tracked in, crumbs fall into crevices, dust settles everywhere. I'm getting into the seams, under the seats, between console gaps, all the places where it builds up. For Protect & Shine, I use a cordless vacuum that handles regular maintenance and cleanup. For Shield & Shine, I bring the heavy duty shop vacuum with serious suction power to pull out everything that's been sitting there.</p>
             <p style="margin-bottom: 32px;">On top of vacuuming, the shampoo & extractor lifts dirt and grime while simultaneously boosting the color of your fabric and carpet. You'll notice faded seats, carpet, floor mats, headliner and if needed come back to life with a richer, more vibrant look. The shampoo breaks down embedded dirt and oils, and the extractor pulls it all out along with the moisture. This is what removes the smells and stains that vacuuming alone can't touch. Between the deep vacuum work and full shampoo extraction on Shield & Shine, your interior doesn't just look cleaner, it actually is cleaner down to the fibers.</p>
             
-            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px; margin-top: 48px;">UV Protectant Application</h3>
+            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">UV Protectant Application</h3>
             <p style="margin-bottom: 32px;">Your dashboard, door panels, leather, and steering wheel take a beating from the sun. I apply a UV protectant that absorbs into the material and blocks damage from UV rays. This finish also restores faded surfaces back to their original color, eliminating that washed-out look sun exposure causes over time. You can choose between a matte or glossy finish depending on your preference. Matte keeps things natural and factory looking. Glossy gives a bit more shine. Either way, it's protecting your interior from cracking, fading, and aging prematurely while bringing back that deep, vibrant appearance.</p>
             
-            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px; margin-top: 48px;">Ceramic Coating Boost</h3>
+            <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Ceramic Coating Boost</h3>
             <p style="margin-bottom: 32px;">This isn't a full ceramic coating (those cost $1000+ and take days), but it's a coating boost that adds months of protection in a single application. Water beads off, dirt doesn't bond as easily, and your next wash is way easier. Think of it as a protective layer between your paint and everything trying to mess it up. It won't last forever, but it'll keep your car cleaner longer than wax ever could.</p>
             
             <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-subtle);">
-                <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 400; margin-bottom: 16px;">The Process</h3>
+                <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px;">The Process</h3>
                 <p>I show up at your location with everything I need. We do a quick walk-around so I can see what we're working with. Before I start, I'll just need access to a hose and water hookup. If you're getting the Shield & Shine package, I'll also need a power outlet for the shop vacuum. Once we're set up, I get to work while you go about your day. When I'm done, you pay via card reader and you're finished. No waiting around at a shop, no dropping your car off and arranging rides. That's it.</p>
             </div>
         </div>
         </div>
+		<!-- Brand Logos Section -->
+	<p style="color: var(--text-secondary); font-size: 14px; text-align: center; margin: 40px 0 28px 0; opacity: 0.8;">
+    I use trusted, professional-grade products from industry leaders:
+</p>
+
+<div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+    <img src="meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8;">
+    <img src="p&slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8;">
+    <img src="Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8;">
+</div>
+
     </section>
 
     <section class="cta-bar">
@@ -1012,7 +1100,7 @@
 
     <section id="booking" style="padding: 120px 40px; background: var(--dark-card);">
         <div class="section-header">
-            <h2>Book Online</h2>
+            <h2 style="font-weight: 500; letter-spacing: -0.05em;">Book Online</h2>
             <p>Pick your service, choose a time, I'll be there</p>
         </div>
         <div style="max-width: 800px; margin: 0 auto;">
@@ -1139,18 +1227,23 @@
         });
 
         // Subtle parallax effect on hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const heroHeight = hero ? hero.offsetHeight : 0;
-            
-            if (hero && scrolled < heroHeight) {
-                const parallaxAmount = scrolled * 0.3;
-                const opacityValue = 1 - (scrolled / heroHeight) * 0.3;
-                hero.style.transform = `translateY(${parallaxAmount}px)`;
-                hero.style.opacity = opacityValue;
-            }
-        });
+  window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const scrollTop = window.pageYOffset;
+  const heroHeight = hero.offsetHeight;
+
+  // Move until hero fully scrolls off screen
+  if (scrollTop <= heroHeight) {
+    const parallax = scrollTop * 0.4; // adjust strength
+    hero.style.transform = `translateY(${parallax}px)`;
+    hero.style.opacity = 1 - scrollTop / (heroHeight * 0.8);
+  } else {
+    hero.style.transform = `translateY(${heroHeight * 0.4}px)`;
+    hero.style.opacity = 0;
+  }
+});
     </script>
 </body>
 </html>
