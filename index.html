@@ -217,11 +217,23 @@
   justify-content: center;
   padding: 120px 40px 80px;
   position: relative;
-  background: url("imgs/hero-gradient.webp") center top / cover no-repeat, #0a0a0a;
+  background: radial-gradient(
+    circle at center top,
+    rgba(16, 24, 32, 1) 0%,     /* darker blue-gray core */
+    rgba(10, 10, 10, 1) 60%,    /* smooth fade to near-black */
+    rgba(8, 8, 8, 1) 100%       /* fully dark edges */
+  );
   background-attachment: fixed;
   z-index: 1;
   overflow: hidden;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
+
+
+
+
+
 		
 		
 
@@ -257,7 +269,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: blueGradientScroll 10s linear infinite;
+  white-space: nowrap;
+  margin-left: 0.35em; /* spacing when inline */
 }
+
+/* Force "Done Right" onto a new line below 833px */
+@media (max-width: 833px) {
+  .hero h1 strong {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
 
 @keyframes blueGradientScroll {
   0% { background-position: 0% 0; }
@@ -436,10 +460,10 @@
 .gallery::before {
   content: "";
   position: absolute;
-  top: -160px;
+  top: -180px;
   left: 0;
   right: 0;
-  height: 160px;
+  height: 180px;
   background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, var(--dark-bg) 100%);
   z-index: 0;
   pointer-events: none;
@@ -453,14 +477,26 @@
 }
 
         
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
+       .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 1000px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
         .gallery-item {
             position: relative;
             padding-bottom: 75%;
@@ -841,10 +877,12 @@ body::after {
             </div>
         </div>
     </nav>
+	
+	
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Mobile Detailing <strong>Done Right</strong></h1>
+            <h1>Mobile Detailing<strong>Done Right</strong></h1>
             <p class="hero-subtitle">I bring professional detailing directly to your driveway</p>
             
             <!-- Service Area & Trust -->
@@ -943,7 +981,10 @@ body::after {
             </p>
             <p style="color: var(--text-secondary); font-size: 17px; line-height: 1.8;">
                 I show up with professional equipment and handle everything on-site. Your driveway, office parking lot, wherever works. Mobile service means lower overhead and more flexibility for you. 
-                <span style="color: var(--text-primary); font-weight: 500; white-space: nowrap;">You get quality work without the hassle of a traditional shop.</span>
+                <span style="color: var(--text-primary); font-weight: 500; white-space: normal; word-break: break-word;">
+  You get quality work without the hassle of a traditional shop.
+</span>
+
             </p>
             <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border-subtle);">
                 <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; max-width: 600px; margin: 0 auto;">
@@ -1064,9 +1105,9 @@ body::after {
 </p>
 
 <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-    <img src="https://raw.githubusercontent.com/chrisvandre2-gif/srgifddsf/main/imgs/meguaiarlogobw.png" alt="Meguiar's Logo" style="width: 100px; height: auto; opacity: 0.8;">
-    <img src="https://raw.githubusercontent.com/chrisvandre2-gif/srgifddsf/main/imgs/p%26slogo.png" alt="P&S Logo" style="width: 120px; height: auto; opacity: 0.8;">
-    <img src="https://raw.githubusercontent.com/chrisvandre2-gif/srgifddsf/main/imgs/Stjarnagloss-logo.png" alt="Stjärnagloss Logo" style="width: 110px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/p%26slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8;">
 </div>
 
     </section>
