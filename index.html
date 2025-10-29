@@ -1,17 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+    PRODUCTION OPTIMIZATION NOTES:
+    
+    1. REPLACE GA4 ID: Line ~80 - Replace 'G-XXXXXXXXXX' with your actual Google Analytics 4 measurement ID
+    
+    2. EXTRACT CSS: Move all <style> content to external 'styles.css' file and minify
+       - Reduces HTML size
+       - Enables browser caching
+       - Improves load performance
+    
+    3. EXTRACT JS: Move all <script> content to external 'main.js' file and minify
+       - Same benefits as CSS extraction
+    
+    4. IMAGE OPTIMIZATION: 
+       - Compress all images in /imgs/ folder (use tools like TinyPNG, Squoosh, or ImageOptim)
+       - Consider using WebP format for better compression
+       - Ensure images have correct dimensions
+    
+    5. UPDATE SCHEMA: Verify coordinates in JSON-LD schema are accurate for your service area
+    
+    6. VERIFY SQUARE BOOKING: Test that Square embed loads correctly and fallback works
+-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shield & Shine - Professional Auto Detailing</title>
+    <title>Shield & Shine - Professional Mobile Auto Detailing in Redding, CA</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional mobile auto detailing in Redding, CA. I come to you with express wash, interior detailing, paint protection, and ceramic coating. Same-day service available. Call (209) 628-5830">
+    <meta name="keywords" content="mobile auto detailing, car detailing Redding, mobile car wash, ceramic coating, paint protection, interior detailing, Redding CA">
+    <meta name="author" content="Shield & Shine Professional Detailing">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shieldandshinedetailing.com">
+    <meta property="og:title" content="Shield & Shine - Professional Mobile Auto Detailing in Redding, CA">
+    <meta property="og:description" content="Professional mobile auto detailing in Redding. Express wash from $30, full detail from $150. I come to your location with professional equipment.">
+    <meta property="og:image" content="https://shieldandshinedetailing.com/imgs/shieldandshine.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shieldandshinedetailing.com">
+    <meta property="twitter:title" content="Shield & Shine - Mobile Auto Detailing Redding">
+    <meta property="twitter:description" content="Professional mobile auto detailing in Redding. Same-day service available. Call (209) 628-5830">
+    <meta property="twitter:image" content="https://shieldandshinedetailing.com/imgs/shieldandshine.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/shieldandshine.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/shieldandshine.png">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Shield & Shine Professional Detailing",
+      "image": "https://shieldandshinedetailing.com/imgs/shieldandshine.png",
+      "@id": "https://shieldandshinedetailing.com",
+      "url": "https://shieldandshinedetailing.com",
+      "telephone": "+12096285830",
+      "email": "chris@shieldandshinedetailing.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Redding",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.5865,
+        "longitude": -122.3917
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "15:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "05:00",
+          "closes": "20:00"
+        }
+      ],
+      "priceRange": "$30-$150",
+      "servesCuisine": "",
+      "description": "Professional mobile auto detailing service in Redding, CA. We specialize in paint sealant protection, interior deep cleaning, and same-day service. Mobile service means we come to your location.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Redding"
+      }
+    }
+    </script>
+    
+    <!-- Google Analytics 4 - Replace with your actual GA4 measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WYYJK7RBQR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WYYJK7RBQR');
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            width: 100%;
         }
         
         :root {
@@ -215,7 +322,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 40px 80px;
+  padding: 120px 20px 80px;
   position: relative;
   background: radial-gradient(
     circle at center top,
@@ -228,6 +335,8 @@
   overflow: hidden;
   will-change: transform, opacity;
   transform: translateZ(0);
+  width: 100%;
+  max-width: 100vw;
 }
 
 
@@ -242,25 +351,28 @@
 
         .hero-content {
             max-width: 1000px;
+            width: 100%;
             text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
 		
-		.hero-content {
-  position: relative;
-  z-index: 2;
-}
 
         
-		.hero h1 {
-			font-size: clamp(32px, 6.2vw, 78px);
-			font-weight: 500;
-			line-height: 1.15;
-			margin-bottom: 24px;
-			animation: fadeInUp 0.8s ease;
-			white-space: normal; /* allows wrapping */
-			letter-spacing: -0.05em;
-			word-break: break-word;
-	}
+        .hero h1 {
+            font-size: clamp(36px, 11vw, 88px);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease;
+            letter-spacing: -0.05em;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+    }
         
 .hero h1 strong {
   font-weight: 600;
@@ -268,17 +380,62 @@
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: blueGradientScroll 10s linear infinite;
-  white-space: nowrap;
-  margin-left: 0.35em; /* spacing when inline */
+  margin-left: 0.15em;
 }
 
-/* Force "Done Right" onto a new line below 833px */
-@media (max-width: 833px) {
+/* Hide "Mobile " when it wraps - allows "Detailing Done Right" to be much larger */
+@media (max-width: 680px) {
+  .mobile-text {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: clamp(48px, 15vw, 110px);
+  }
+  
+  /* Force "Done Right" onto new line when "Mobile" is hidden */
   .hero h1 strong {
     display: block;
     margin-left: 0;
-    margin-top: 4px;
+    margin-top: 0px;
+  }
+}
+		
+		/* Prevent "Mobile Detailing Done Right" from breaking when it fits */
+.hero h1 {
+  white-space: nowrap;
+}
+
+/* Allow wrapping on small screens */
+@media (max-width: 800px) {
+  .hero h1 {
+    white-space: normal;
+  }
+}
+
+
+/* Scale gradient with screen size */
+@media (max-width: 480px) {
+  .hero h1 strong {
+    background-size: 300% 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero h1 strong {
+    background-size: 400% 100%;
+  }
+  
+  .hero {
+    padding: 100px 12px 60px;
+  }
+}
+
+@media (max-width: 280px) {
+  .hero {
+    padding: 100px 8px 60px;
   }
 }
 
@@ -375,8 +532,10 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
+            max-width: 100%;
+            width: 100%;
         }
         
         .service-card {
@@ -471,11 +630,6 @@
 
 
 /* Ensure your text + images sit ABOVE the fade */
-.gallery * {
-  position: relative;
-  z-index: 1;
-}
-
         
        .gallery-grid {
   display: grid;
@@ -495,6 +649,11 @@
 @media (max-width: 650px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
   }
 }
         .gallery-item {
@@ -555,17 +714,115 @@
         .contact {
             padding: 120px 40px;
             text-align: center;
-            background: var(--dark-blue-tint);
+            background: var(--dark-card);
+            overflow-x: hidden;
         }
         
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 60px;
             margin-top: 60px;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact {
+                padding: 80px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact {
+                padding: 80px 16px;
+            }
+            
+            .contact-item p {
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .contact {
+                padding: 80px 12px;
+            }
+            
+            .contact-item p {
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .contact {
+                padding: 80px 10px;
+            }
+            
+            .contact-item p {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 350px) {
+            .contact {
+                padding: 80px 8px;
+            }
+            
+            .contact-item p {
+                font-size: 11px;
+            }
+        }
+        
+        @media (max-width: 330px) {
+            .contact {
+                padding: 80px 6px;
+            }
+            
+            .contact-item p {
+                font-size: 10px;
+            }
+        }
+        
+        @media (max-width: 300px) {
+            .contact {
+                padding: 80px 4px;
+            }
+            
+            .contact-item p {
+                font-size: 9px;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                font-size: 12px;
+                padding: 12px 16px;
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+        
+        @media (max-width: 280px) {
+            .btn-primary,
+            .btn-secondary {
+                font-size: 11px;
+                padding: 10px 12px;
+            }
+            
+            .contact-item p {
+                font-size: 8px;
+            }
+            
+            #booking {
+                padding: 80px 8px !important;
+            }
         }
         
         .contact-item h3 {
@@ -580,12 +837,17 @@
             color: var(--text-primary);
             font-size: 18px;
             line-height: 1.6;
+            max-width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .contact-item a {
             color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
+            white-space: nowrap;
+            display: inline-block;
         }
         
         .contact-item a:hover {
@@ -661,11 +923,6 @@
         max-width: 100%;
     }
 
-    .hero h1 {
-        font-size: clamp(28px, 8vw, 48px);
-        line-height: 1.2;
-    }
-
     .hero-subtitle {
         font-size: 16px;
         margin-bottom: 32px;
@@ -695,14 +952,188 @@
     }
 }
         
-        /* Extra small screens */
-        @media (max-width: 360px) {
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            .contact {
+                padding: 80px 20px;
+            
+            .logo {
+                font-size: 16px;
+            }
+            
+            .logo img {
+                height: 28px !important;
+                width: 28px !important;
+            }
+            
+            .services {
+                padding: 80px 16px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
             .services-grid {
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
             
+            .understand-heading {
+                font-size: 32px !important;
+            }
+            
+            .contact-item p {
+                font-size: 16px;
+            }
+            
+            .services {
+                padding: 80px 20px;
+            }
+            
             .service-card {
-                padding: 24px 16px;
+                padding: 32px 20px;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 360px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 0;
+            }
+            
+            .contact {
+                padding: 60px 16px;
+            }
+            
+            .understand-heading {
+                font-size: 28px !important;
+            }
+            
+            .services {
+                padding: 60px 12px;
+            }
+            
+            .logo {
+                font-size: 14px;
+            }
+            
+            .logo img {
+                height: 24px !important;
+                width: 24px !important;
+            }
+            
+            .service-card {
+                padding: 20px 12px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .contact-item p {
+                font-size: 14px;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+            
+            /* Fix buttons */
+            .btn-primary,
+            .btn-secondary {
+                white-space: nowrap;
+                font-size: 14px;
+                padding: 14px 24px;
+            }
+            
+            /* Fix service cards overflow */
+            .service-card {
+                padding: 20px 12px;
+                min-width: 0;
+                max-width: 100%;
+            }
+            
+            .service-card h3 {
+                font-size: 22px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .service-card p {
+                font-size: 13px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .service-card ul {
+                font-size: 13px;
+            }
+            
+            .service-card ul li {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .service-price {
+                font-size: 20px;
+                word-break: break-word;
+            }
+        }
+        
+        /* Ultra small screens - prevent any horizontal overflow */
+        @media (max-width: 320px) {
+            .services {
+                padding: 60px 8px;
+            }
+            
+            .services-grid {
+                gap: 16px;
+                padding: 0 8px;
+            }
+            
+            .service-card {
+                padding: 16px 10px;
+                min-width: 0;
+                max-width: 100%;
+            }
+            
+            .service-card h3 {
+                font-size: 20px;
+            }
+            
+            .service-card p,
+            .service-card ul {
+                font-size: 12px;
+            }
+            
+            .service-price {
+                font-size: 18px;
+            }
+        }
+        
+        /* Short viewport heights */
+        @media (max-height: 700px) {
+            .gallery::before {
+                top: -120px;
+                height: 120px;
+            }
+        }
+        
+        @media (max-height: 600px) {
+            .gallery::before {
+                top: -80px;
+                height: 80px;
+            }
+        }
+        
+        @media (max-height: 500px) {
+            .gallery::before {
+                top: -40px;
+                height: 40px;
             }
         }
         
@@ -829,7 +1260,7 @@ body::after {
     transparent 3px
   );
   pointer-events: none;
-  z-index: 9999;
+  z-index: 999;
   mix-blend-mode: overlay;
   opacity: 0.15;
 }
@@ -882,7 +1313,7 @@ body::after {
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Mobile Detailing<strong>Done Right</strong></h1>
+            <h1><span class="mobile-text">Mobile </span>Detailing<strong>Done Right</strong></h1>
             <p class="hero-subtitle">I bring professional detailing directly to your driveway</p>
             
             <!-- Service Area & Trust -->
@@ -924,7 +1355,7 @@ body::after {
         
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (1).jpg" alt="Detail work">
+                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (1).jpg" alt="Full Shield & Shine detailing service - complete car transformation after 3 hours" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Full Shield & Shine</h4>
                     <p>3 hours • Complete transformation</p>
@@ -932,7 +1363,7 @@ body::after {
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-ORm4ZV7tDhs-unsplash.jpg" alt="Detail work">
+                <img src="imgs/agent-j-ORm4ZV7tDhs-unsplash.jpg" alt="Paint sealant protection - 6 month ceramic coating application on car exterior" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Paint Sealant</h4>
                     <p>6-month protection applied</p>
@@ -940,7 +1371,7 @@ body::after {
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-v9yMpgIGYQA-unsplash.jpg" alt="Detail work">
+                <img src="imgs/agent-j-v9yMpgIGYQA-unsplash.jpg" alt="Interior deep cleaning service - stain removal and surface protection for car interior" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Interior Deep Clean</h4>
                     <p>Stains removed, surfaces protected</p>
@@ -948,7 +1379,7 @@ body::after {
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-zuD40Bt36pU-unsplash.jpg" alt="Detail work">
+                <img src="imgs/agent-j-zuD40Bt36pU-unsplash.jpg" alt="Headlight restoration - before and after cloudy to crystal clear headlight repair" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Headlight Restoration</h4>
                     <p>Cloudy to crystal clear</p>
@@ -956,7 +1387,7 @@ body::after {
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (2).png" alt="Detail work">
+                <img src="imgs/agent-j-YYInQcpOBYQ-unsplash (2).png" alt="Wheel detailing service - brake dust removal and tire dressing application" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Wheel Detail</h4>
                     <p>Brake dust removed, tires dressed</p>
@@ -964,7 +1395,7 @@ body::after {
             </div>
             
             <div class="gallery-item">
-                <img src="imgs/agent-j-e2AR4Bfum1Q-unsplash.jpg" alt="Detail work">
+                <img src="imgs/agent-j-e2AR4Bfum1Q-unsplash.jpg" alt="Express wash service - 45 minute exterior hand wash and quick detail" loading="lazy" width="400" height="300">
                 <div class="gallery-overlay">
                     <h4>Express Wash</h4>
                     <p>45 minutes to fresh</p>
@@ -987,18 +1418,18 @@ body::after {
 
             </p>
             <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border-subtle);">
-                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; max-width: 600px; margin: 0 auto;">
-                    <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">100<span style="font-weight: 500; letter-spacing: -0.1em;">%</span></div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Mobile Service</div>
+                <div style="display: flex; justify-content: space-around; flex-wrap: nowrap; gap: clamp(10px, 4vw, 30px); max-width: 600px; margin: 0 auto;">
+                    <div style="min-width: 0; flex: 1;">
+                        <div style="font-size: clamp(20px, 5vw, 32px); color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">100<span style="font-weight: 500; letter-spacing: -0.1em;">%</span></div>
+                        <div style="color: var(--text-secondary); font-size: clamp(11px, 2.2vw, 14px); margin-top: 8px; letter-spacing: -0.01em; white-space: nowrap;">Mobile Service</div>
                     </div>
-                    <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">Same Day</div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Available</div>
+                    <div style="min-width: 0; flex: 1;">
+                        <div style="font-size: clamp(20px, 5vw, 32px); color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em; white-space: nowrap;">Same Day</div>
+                        <div style="color: var(--text-secondary); font-size: clamp(11px, 2.2vw, 14px); margin-top: 8px; letter-spacing: -0.01em; white-space: nowrap;">Available</div>
                     </div>
-                    <div>
-                        <div style="font-size: 32px; color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em;">No BS</div>
-                        <div style="color: var(--text-secondary); font-size: 14px; margin-top: 8px; letter-spacing: -0.01em;">Pricing</div>
+                    <div style="min-width: 0; flex: 1;">
+                        <div style="font-size: clamp(20px, 5vw, 32px); color: var(--primary-blue); font-weight: 500; letter-spacing: -0.02em; white-space: nowrap;">No BS</div>
+                        <div style="color: var(--text-secondary); font-size: clamp(11px, 2.2vw, 14px); margin-top: 8px; letter-spacing: -0.01em; white-space: nowrap;">Pricing</div>
                     </div>
                 </div>
                 <div style="margin-top: 50px;">
@@ -1072,7 +1503,7 @@ body::after {
     <section style="padding: 100px 40px; background: var(--dark-bg);">
         <div style="max-width: 900px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 42px; font-weight: 500; margin-bottom: 20px;">Understand What You're Getting</h2>
+            <h2 class="understand-heading" style="font-size: 42px; font-weight: 500; margin-bottom: 20px;">Understand What You're Getting</h2>
             <p style="color: var(--text-secondary); font-size: 17px;">Quality work means being clear about what actually happens to your car and why each step matters.</p>
         </div>
         
@@ -1104,10 +1535,10 @@ body::after {
     I use trusted, professional-grade products from industry leaders:
 </p>
 
-<div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8;">
-    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/p%26slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8;">
-    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8;">
+<div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: nowrap;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/meguaiarlogobw.png" alt="Brand Logo 1" style="width: 100px; height: auto; opacity: 0.8; min-width: 60px; max-width: 100px;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/p%26slogo.png" alt="Brand Logo 2" style="width: 120px; height: auto; opacity: 0.8; min-width: 70px; max-width: 120px;">
+    <img src="https://github.com/chrisvandre2-gif/srgifddsf/blob/main/imgs/Stjarnagloss-logo.png" alt="Brand Logo 3" style="width: 110px; height: auto; opacity: 0.8; min-width: 65px; max-width: 110px;">
 </div>
 
     </section>
@@ -1140,15 +1571,37 @@ body::after {
         </div>
     </section>
 
-    <section id="booking" style="padding: 120px 40px; background: var(--dark-card);">
+    <section id="booking" style="padding: 120px 40px; background: var(--dark-card); overflow-x: hidden;">
         <div class="section-header">
             <h2 style="font-weight: 500; letter-spacing: -0.05em;">Book Online</h2>
             <p>Pick your service, choose a time, I'll be there</p>
         </div>
         <div style="max-width: 800px; margin: 0 auto;">
             <!-- Start Square Appointments Embed Code -->
-            <script src='https://square.site/appointments/buyer/widget/6n6in1n6sciota/LD3RGTAW3QPX9.js'></script>
+            <div id="square-booking-widget">
+                <script src='https://square.site/appointments/buyer/widget/6n6in1n6sciota/LD3RGTAW3QPX9.js'></script>
+            </div>
             <!-- End Square Appointments Embed Code -->
+            
+            <!-- Fallback button if Square doesn't load -->
+            <noscript>
+                <div style="text-align: center; padding: 40px;">
+                    <a href="https://square.site/book/LD3RGTAW3QPX9/shield-shine-professional-detailing" 
+                       class="btn-primary" 
+                       style="display: inline-block;">
+                        Book Appointment on Square
+                    </a>
+                </div>
+            </noscript>
+            <div id="square-fallback" style="text-align: center; padding: 20px; display: none;">
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Having trouble with the booking widget?</p>
+                <a href="https://square.site/book/LD3RGTAW3QPX9/shield-shine-professional-detailing" 
+                   class="btn-primary" 
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Book Directly on Square
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1180,7 +1633,7 @@ body::after {
             });
         });
 
-        // Enhanced scroll animations
+        // Enhanced scroll animations with single optimized observer
         const observerOptions = {
             threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
@@ -1190,6 +1643,8 @@ body::after {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Disconnect observer for this element to save resources
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -1221,16 +1676,11 @@ body::after {
         });
 
         // Animate "Why Shield & Shine" stats
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated', 'slide-up', 'visible');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('[style*="font-size: 32px"]').forEach(stat => {
-            statsObserver.observe(stat);
+        document.querySelectorAll('[style*="font-size: clamp(20px"]').forEach(stat => {
+            if (!stat.classList.contains('animated')) {
+                stat.classList.add('slide-up');
+                observer.observe(stat);
+            }
         });
 
         // Nav background on scroll
@@ -1286,6 +1736,41 @@ body::after {
     hero.style.opacity = 0;
   }
 });
+
+        // Square booking widget fallback detection
+        setTimeout(() => {
+            const squareWidget = document.getElementById('square-booking-widget');
+            const fallback = document.getElementById('square-fallback');
+            
+            // Check if Square widget loaded
+            if (squareWidget && squareWidget.children.length <= 1) {
+                if (fallback) fallback.style.display = 'block';
+            }
+        }, 3000);
+        
+        // Track phone clicks for analytics
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_click', {
+                        'event_category': 'engagement',
+                        'event_label': link.href
+                    });
+                }
+            });
+        });
+        
+        // Track booking button clicks
+        document.querySelectorAll('a[href*="booking"], a[href*="square"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'booking_click', {
+                        'event_category': 'conversion',
+                        'event_label': link.href
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
