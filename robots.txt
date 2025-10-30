@@ -1,0 +1,35 @@
+# Robots.txt for Shield & Shine Professional Detailing
+# https://shieldandshinedetailing.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://shieldandshinedetailing.com/sitemap.xml
+
+# Specific crawler instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
