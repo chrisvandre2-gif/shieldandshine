@@ -6,6 +6,7 @@
     1. REPLACE GA4 ID: Line ~80 - Replace 'G-XXXXXXXXXX' with your actual Google Analytics 4 measurement ID
     
     2. EXTRACT CSS: Move all <style> content to external 'styles.css' file and minify
+    2. EXTRACT CSS: Move all <style> content to external 'styles.css' file and minify
        - Reduces HTML size
        - Enables browser caching
        - Improves load performance
@@ -25,11 +26,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shield & Shine - Professional Mobile Auto Detailing in Redding, CA</title>
+    <title>Shield & Shine | Mobile Auto Detailing in Redding, CA</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional mobile auto detailing in Redding, CA. I come to you with express wash, interior detailing, paint protection, and ceramic coating. Same-day service available. Call (209) 628-5830">
-    <meta name="keywords" content="mobile auto detailing, car detailing Redding, mobile car wash, ceramic coating, paint protection, interior detailing, Redding CA">
+    <meta name="description" content="Mobile auto detailing Redding, CA. Premium service at your location, same-day availability.">
     <meta name="author" content="Shield & Shine Professional Detailing">
     <meta name="robots" content="index, follow">
     
@@ -37,19 +37,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldandshinedetailing.com">
     <meta property="og:title" content="Shield & Shine - Professional Mobile Auto Detailing in Redding, CA">
-    <meta property="og:description" content="Professional mobile auto detailing in Redding. Express wash from $30, full detail from $150. I come to your location with professional equipment.">
+    <meta property="og:description" content="Mobile auto detailing Redding, CA. Premium service at your location, same-day availability.">
     <meta property="og:image" content="https://shieldandshinedetailing.com/imgs/shieldandshine.png">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://shieldandshinedetailing.com">
-    <meta property="twitter:title" content="Shield & Shine - Mobile Auto Detailing Redding">
-    <meta property="twitter:description" content="Professional mobile auto detailing in Redding. Same-day service available. Call (209) 628-5830">
-    <meta property="twitter:image" content="https://shieldandshinedetailing.com/imgs/shieldandshine.png">
-    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="imgs/shieldandshine.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="imgs/shieldandshine.png">
+<link rel="icon" href="https://shieldandshinedetailing.com/imgs/shieldandshine.png" type="image/png">
+<link rel="apple-touch-icon" href="https://shieldandshinedetailing.com/imgs/shieldandshine.png">
+<link rel="canonical" href="https://shieldandshinedetailing.com/">
+
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -355,85 +350,88 @@
             text-align: center;
             position: relative;
             z-index: 2;
-            padding: 0 20px;
+            padding: 0 12px;
             box-sizing: border-box;
+            margin: 0 auto;
         }
 		
 
-        
-        .hero h1 {
-            font-size: clamp(36px, 11vw, 88px);
-            font-weight: 500;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease;
-            letter-spacing: -0.05em;
-            text-align: center;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-    }
-        
+      .hero h1 {
+    font-size: clamp(32px, 7vw, 88px);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 auto 16px auto;
+    padding-bottom: 4px;
+    animation: fadeInUp 0.8s ease;
+    letter-spacing: -0.05em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.hero h1 .mobile-text {
+    white-space: nowrap;
+}
+
 .hero h1 strong {
-  font-weight: 600;
-  background: linear-gradient(90deg, #36a2f0, #0895e5, #36a2f0);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: blueGradientScroll 10s linear infinite;
-  margin-left: 0.15em;
+    font-weight: 600;
+    background: linear-gradient(90deg, #36a2f0, #0895e5, #36a2f0);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: blueGradientScroll 10s linear infinite;
+    white-space: nowrap;
 }
 
-/* Hide "Mobile " when it wraps - allows "Detailing Done Right" to be much larger */
-@media (max-width: 680px) {
-  .mobile-text {
-    display: none;
+/* On smaller screens: center align, hide "Mobile", show only "Detailing Done Right" - MUCH BIGGER */
+@media (max-width: 850px) {
+    .mobile-text {
+        display: none;
+    }
+    
+    .hero h1 {
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        font-size: clamp(64px, 16vw, 130px);
+        margin-bottom: 12px;
+    }
+    
+    .hero h1 strong {
+        margin-left: 0;
+        display: block;
+    }
+}
+
+/* Only scale down when absolutely necessary */
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: clamp(56px, 15vw, 130px);
   }
   
-  .hero h1 {
-    font-size: clamp(48px, 15vw, 110px);
-  }
-  
-  /* Force "Done Right" onto new line when "Mobile" is hidden */
-  .hero h1 strong {
-    display: block;
-    margin-left: 0;
-    margin-top: 0px;
-  }
-}
-		
-		/* Prevent "Mobile Detailing Done Right" from breaking when it fits */
-.hero h1 {
-  white-space: nowrap;
-}
-
-/* Allow wrapping on small screens */
-@media (max-width: 800px) {
-  .hero h1 {
-    white-space: normal;
-  }
-}
-
-
-/* Scale gradient with screen size */
-@media (max-width: 480px) {
   .hero h1 strong {
     background-size: 300% 100%;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 350px) {
+  .hero h1 {
+    font-size: clamp(48px, 14vw, 130px);
+  }
+  
   .hero h1 strong {
     background-size: 400% 100%;
   }
   
   .hero {
-    padding: 100px 12px 60px;
+    padding: 100px 8px 60px;
   }
 }
-
-@media (max-width: 280px) {
   .hero {
     padding: 100px 8px 60px;
   }
@@ -1318,7 +1316,7 @@ body::after {
 
     <section class="hero">
         <div class="hero-content">
-            <h1><span class="mobile-text">Mobile </span>Detailing<strong>Done Right</strong></h1>
+            <h1><span class="mobile-text">Mobile </span>Detailing <strong>Done Right</strong></h1>
             <p class="hero-subtitle">I bring professional detailing directly to your driveway</p>
             
             <!-- Service Area & Trust -->
