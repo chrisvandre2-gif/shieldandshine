@@ -748,14 +748,14 @@
             height: 100%;
         }
         
-        /* After image is the base layer (full width) - STATIC */
+        /* After image is the base layer (full width) - FILLS FRAME */
         .after-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
         }
         
@@ -771,7 +771,7 @@
             z-index: 2;
         }
         
-        /* Before image - sized to container, not wrapper */
+        /* Before image - FILLS FRAME like after image */
         .before-image-wrapper .before-image {
             position: absolute;
             top: 0;
@@ -779,7 +779,7 @@
             width: auto;
             height: 100%;
             min-width: calc(200%);  /* Double width since wrapper is 50% */
-            object-fit: contain;
+            object-fit: cover;
             object-position: left center;
         }
         
@@ -2085,8 +2085,10 @@ body::after {
                 // Set before image width to match container
                 if (beforeImage) {
                     beforeImage.style.width = containerWidth + 'px';
+                    beforeImage.style.height = '100%';
                     beforeImage.style.maxWidth = 'none';
                     beforeImage.style.left = '0';
+                    beforeImage.style.objectFit = 'cover';
                 }
             };
             
