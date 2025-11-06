@@ -771,16 +771,14 @@
             z-index: 2;
         }
         
-        /* Before image - FILLS FRAME like after image */
+        /* Before image - positioned by JavaScript */
         .before-image-wrapper .before-image {
             position: absolute;
             top: 0;
             left: 0;
-            width: auto;
             height: 100%;
-            min-width: calc(200%);  /* Double width since wrapper is 50% */
             object-fit: cover;
-            object-position: left center;
+            object-position: center;
         }
         
         .slider-handle {
@@ -2082,13 +2080,16 @@ body::after {
                 handle.style.left = initialPos + 'px';
                 beforeWrapper.style.width = initialPos + 'px';
                 
-                // Set before image width to match container
+                // Set before image to exact container dimensions
                 if (beforeImage) {
-                    beforeImage.style.width = containerWidth + 'px';
+                    // Calculate the actual pixel width of the container
+                    const containerRect = container.getBoundingClientRect();
+                    beforeImage.style.width = containerRect.width + 'px';
                     beforeImage.style.height = '100%';
                     beforeImage.style.maxWidth = 'none';
                     beforeImage.style.left = '0';
                     beforeImage.style.objectFit = 'cover';
+                    beforeImage.style.objectPosition = 'center';
                 }
             };
             
@@ -2100,9 +2101,10 @@ body::after {
                 // Constrain position within bounds
                 position = Math.max(0, Math.min(position, rect.width));
                 
-                // Update handle and before wrapper
+                // Update handle and before wrapper ONLY
                 handle.style.left = position + 'px';
                 beforeWrapper.style.width = position + 'px';
+                // Don't touch the before image dimensions
             };
             
             // Handle start
