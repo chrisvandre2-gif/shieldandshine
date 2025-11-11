@@ -171,86 +171,92 @@
             }
         }, 5000);
         
-// Before/After Slider Functionality - Rewritten
-document.querySelectorAll('.before-after-slider').forEach(slider => {
-    const handle = slider.querySelector('.slider-handle');
-    const beforeWrapper = slider.querySelector('.before-image-wrapper');
-    const beforeImage = beforeWrapper.querySelector('.before-image');
-    const container = slider.querySelector('.before-after-container');
-    let isActive = false;
-    
-    // Set initial position to 50%
-    const setInitialPosition = () => {
-        const containerWidth = container.offsetWidth;
-        const initialPos = containerWidth / 2;
-        handle.style.left = initialPos + 'px';
-        beforeWrapper.style.width = initialPos + 'px';
-        
-        // Set before image width to match container
-        if (beforeImage) {
-            beforeImage.style.width = containerWidth + 'px';
-            beforeImage.style.maxWidth = 'none';
-            beforeImage.style.left = '0';
-        }
-    };
-    
-    // Update slider position
-    const updateSliderPosition = (clientX) => {
-        const rect = container.getBoundingClientRect();
-        let position = clientX - rect.left;
-        
-        // Constrain position within bounds
-        position = Math.max(0, Math.min(position, rect.width));
-        
-        // Update handle and before wrapper
-        handle.style.left = position + 'px';
-        beforeWrapper.style.width = position + 'px';
-    };
-    
-    // Handle start
-    const handleStart = (e) => {
-        isActive = true;
-        e.preventDefault();
-        slider.style.cursor = 'grabbing';
-        
-        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        updateSliderPosition(clientX);
-    };
-    
-    // Handle move
-    const handleMove = (e) => {
-        if (!isActive) return;
-        e.preventDefault();
-        
-        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        updateSliderPosition(clientX);
-    };
-    
-    // Handle end
-    const handleEnd = () => {
-        isActive = false;
-        slider.style.cursor = 'col-resize';
-    };
-    
-    // Mouse events
-    handle.addEventListener('mousedown', handleStart);
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('mouseup', handleEnd);
-    
-    // Touch events
-    handle.addEventListener('touchstart', handleStart);
-    document.addEventListener('touchmove', handleMove);
-    document.addEventListener('touchend', handleEnd);
-    
-    // Click anywhere on slider to jump to position
-    slider.addEventListener('click', (e) => {
-        if (e.target === handle) return;
-        updateSliderPosition(e.clientX);
-    });
-    
-    // Initialize on load
-    setInitialPosition();
-    
-    // Reinitialize on window resize
-    window.addEventListener('resize', setInitialPosition);
+        // Before/After Slider Functionality - Rewritten
+        document.querySelectorAll('.before-after-slider').forEach(slider => {
+            const handle = slider.querySelector('.slider-handle');
+            const beforeWrapper = slider.querySelector('.before-image-wrapper');
+            const beforeImage = beforeWrapper.querySelector('.before-image');
+            const container = slider.querySelector('.before-after-container');
+            let isActive = false;
+            
+            // Set initial position to 50%
+            const setInitialPosition = () => {
+                const containerWidth = container.offsetWidth;
+                const initialPos = containerWidth / 2;
+                handle.style.left = initialPos + 'px';
+                beforeWrapper.style.width = initialPos + 'px';
+                
+                // Set before image to exact container dimensions
+                if (beforeImage) {
+                    // Calculate the actual pixel width of the container
+                    const containerRect = container.getBoundingClientRect();
+                    beforeImage.style.width = containerRect.width + 'px';
+                    beforeImage.style.height = '100%';
+                    beforeImage.style.maxWidth = 'none';
+                    beforeImage.style.left = '0';
+                    beforeImage.style.objectFit = 'cover';
+                    beforeImage.style.objectPosition = 'center';
+                }
+            };
+            
+            // Update slider position
+            const updateSliderPosition = (clientX) => {
+                const rect = container.getBoundingClientRect();
+                let position = clientX - rect.left;
+                
+                // Constrain position within bounds
+                position = Math.max(0, Math.min(position, rect.width));
+                
+                // Update handle and before wrapper ONLY
+                handle.style.left = position + 'px';
+                beforeWrapper.style.width = position + 'px';
+                // Don't touch the before image dimensions
+            };
+            
+            // Handle start
+            const handleStart = (e) => {
+                isActive = true;
+                e.preventDefault();
+                slider.style.cursor = 'grabbing';
+                
+                const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                updateSliderPosition(clientX);
+            };
+            
+            // Handle move
+            const handleMove = (e) => {
+                if (!isActive) return;
+                e.preventDefault();
+                
+                const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                updateSliderPosition(clientX);
+            };
+            
+            // Handle end
+            const handleEnd = () => {
+                isActive = false;
+                slider.style.cursor = 'col-resize';
+            };
+            
+            // Mouse events
+            handle.addEventListener('mousedown', handleStart);
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('mouseup', handleEnd);
+            
+            // Touch events
+            handle.addEventListener('touchstart', handleStart);
+            document.addEventListener('touchmove', handleMove);
+            document.addEventListener('touchend', handleEnd);
+            
+            // Click anywhere on slider to jump to position
+            slider.addEventListener('click', (e) => {
+                if (e.target === handle) return;
+                updateSliderPosition(e.clientX);
+            });
+            
+            // Initialize on load
+            setInitialPosition();
+            
+            // Reinitialize on window resize
+            window.addEventListener('resize', setInitialPosition);
         });
