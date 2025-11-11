@@ -179,25 +179,20 @@
             const container = slider.querySelector('.before-after-container');
             let isActive = false;
             
-            // Set initial position to 50%
-            const setInitialPosition = () => {
-                const containerWidth = container.offsetWidth;
-                const initialPos = containerWidth / 2;
-                handle.style.left = initialPos + 'px';
-                beforeWrapper.style.width = initialPos + 'px';
-                
-                // Set before image to exact container dimensions
-                if (beforeImage) {
-                    // Calculate the actual pixel width of the container
-                    const containerRect = container.getBoundingClientRect();
-                    beforeImage.style.width = containerRect.width + 'px';
-                    beforeImage.style.height = '100%';
-                    beforeImage.style.maxWidth = 'none';
-                    beforeImage.style.left = '0';
-                    beforeImage.style.objectFit = 'cover';
-                    beforeImage.style.objectPosition = 'center';
-                }
-            };
+// Set initial position to 50%
+const setInitialPosition = () => {
+    const containerWidth = container.offsetWidth;
+    const initialPos = containerWidth / 2;
+    handle.style.left = initialPos + 'px';
+    beforeWrapper.style.width = initialPos + 'px';
+    
+    // Set before image width to match container
+    if (beforeImage) {
+        beforeImage.style.width = containerWidth + 'px';
+        beforeImage.style.maxWidth = 'none';
+        beforeImage.style.left = '0';
+    }
+};
             
             // Update slider position
             const updateSliderPosition = (clientX) => {
