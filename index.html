@@ -321,16 +321,26 @@
 <div style="margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border-subtle);">
     <h3 style="color: var(--text-primary); font-size: 28px; font-weight: 500; margin-bottom: 32px; text-align: center;">What Customers Say</h3>
     
-    <!-- Overall Rating Header -->
-    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 40px;">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google" style="height: 24px;">
+<!-- Overall Rating Header -->
+<div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 12px; background: var(--dark-card); padding: 16px 24px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+        <svg width="32" height="32" viewBox="0 0 48 48">
+            <path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
         <div>
-            <div style="font-size: 32px; font-weight: 600; color: var(--text-primary);">5.0</div>
-            <div style="color: #FDB022; font-size: 18px;">★★★★★</div>
-            <div style="color: var(--text-secondary); font-size: 14px;">(4 reviews)</div>
+            <div style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Excellent on Google</div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
+                <span style="font-size: 24px; font-weight: 600; color: var(--text-primary);">5.0</span>
+                <span style="color: #FDB022; font-size: 16px;">★★★★★</span>
+                <span style="color: var(--text-secondary); font-size: 14px;">(4)</span>
+            </div>
         </div>
-        <a href="https://www.google.com/maps/place/Shield+and+Shine+Detailing" target="_blank" rel="noopener noreferrer" style="background: #4285f4; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Review us on Google</a>
     </div>
+    <a href="https://maps.app.goo.gl/vBqSrsLf91nGTK8G7" target="_blank" rel="noopener noreferrer" style="background: #4285f4; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s ease;">Review us on Google</a>
+</div>
     
     <!-- Reviews Grid -->
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
@@ -393,10 +403,15 @@
                 <div class="review-text">
                     <span class="review-preview">It was a very good job...</span>
                 </div>
-                <div class="posted-badge">
-                    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google" style="height: 14px; margin-right: 4px;">
-                    Posted on <span style="color: #4285f4;">Google</span>
-                </div>
+<div class="posted-badge">
+    <svg width="16" height="16" viewBox="0 0 48 48" style="margin-right: 6px;">
+        <path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+    Posted on <span style="color: #4285f4; font-weight: 600;">Google</span>
+</div>
             </div>
             
         </div>
@@ -503,12 +518,12 @@
     
     <!-- Fallback CTA if embed doesn't load -->
     <div style="text-align: center; margin-top: 24px;">
-        <a href="https://www.google.com/maps/place/Shield+and+Shine+Detailing/data=!4m2!3m1!1s0x0:0xc8c33f7bf9decd90" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           style="color: var(--primary-blue); text-decoration: none; font-size: 14px; transition: opacity 0.3s ease;">
-           View All Reviews on Google →
-        </a>
+<a href="https://maps.app.goo.gl/vBqSrsLf91nGTK8G7" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   style="display: inline-block; color: var(--primary-blue); text-decoration: none; font-size: 14px; transition: opacity 0.3s ease; margin-bottom: 80px;">
+   View All Reviews on Google →
+</a>
     </div>
 </div>
 
@@ -573,10 +588,10 @@
         
             <div style="color: var(--text-secondary); font-size: 16px; line-height: 1.8;">
             <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Two-Stage Hand Wash</h3>
-            <p style="margin-bottom: 32px;">I start with a heavy foam bath using a wash mitt to lift and remove the bulk of the dirt and grime. Then I come back around with a lighter foam application and work through every detail with quality microfiber towels and detailing brushes. I'm talking wheels, grills, decals, trim, door jambs, every corner and crevice. This isn't a quick rinse and go. I'm meticulous about getting into the spots most people skip because those details are what make the difference between a clean car and a properly detailed one.</p>
+            <p style="margin-bottom: 32px;">I start with a heavy foaming prewash using a wash mitt to lift and remove the bulk of the dirt and grime. Then I come back around with a lighter foam application and work through every detail with quality microfiber towels and detailing brushes. I'm talking wheels, grills, decals, trim, door jambs, every corner and crevice. This isn't a quick rinse and go. I'm meticulous about getting into the spots most people skip because those details are what make the difference between a clean car and a properly detailed one.</p>
             
             <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Clay Bar Decontamination</h3>
-            <p style="margin-bottom: 32px;">Over time, your paint collects contaminants that regular washing can't remove. Tree sap, industrial fallout, rail dust, road tar, overspray from construction. It all builds up and bonds to your clear coat. A clay bar treatment physically removes these embedded particles without damaging the paint. You can actually feel the difference when you run your hand across the surface afterward. It goes from textured to glass smooth. This is what prepares your paint for protection and brings back that clean, responsive feel.</p>
+            <p style="margin-bottom: 32px;">Over time, your paint collects contaminants that regular washing can't remove. Tree sap, iron particals, rail dust, road tar, overspray from construction. It all builds up and bonds to your clear coat. A clay bar treatment physically removes these embedded particles without damaging the paint. You can actually feel the difference when you run your hand across the surface afterward. It goes from textured to glass smooth. This is what prepares your paint for protection and brings back that clean, responsive feel.</p>
             
             <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px; margin-top: 48px;">Interior Vacuum & Deep Cleaning</h3>
             <p style="margin-bottom: 32px;">Interiors take a beating. Dirt gets tracked in, crumbs fall into crevices, dust settles everywhere. I'm getting into the seams, under the seats, between console gaps, all the places where it builds up. For Protect & Shine, I use a cordless vacuum that handles regular maintenance and cleanup. For Shield & Shine, I bring the heavy duty shop vacuum with serious suction power to pull out everything that's been sitting there.</p>
@@ -590,7 +605,7 @@
             
             <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-subtle);">
                 <h3 style="color: var(--text-primary); font-size: 22px; font-weight: 500; margin-bottom: 16px;">The Process</h3>
-                <p>I show up at your location with everything I need. We do a quick walk-around so I can see what we're working with. Before I start, I'll just need access to a hose and water hookup. If you're getting the Shield & Shine package, I'll also need a power outlet for the shop vacuum. Once we're set up, I get to work while you go about your day. When I'm done, you pay via card reader and you're finished. No waiting around at a shop, no dropping your car off and arranging rides. That's it.</p>
+                <p>I show up at your location with everything I need. We do a quick walk-around so I can see what we're working with. Before I start, I'll just need access to a hose and water hookup. If you're getting the Shield & Shine package, I'll also need a power outlet for the shop vacuum. Once we're set up, I get to work while you go about your day. When I'm done, you pay via cash or card reader and you're finished. No waiting around at a shop, no dropping your car off and arranging rides. That's it.</p>
             </div>
         </div>
         </div>
@@ -616,7 +631,7 @@
     <section class="contact" id="contact">
         <div class="section-header">
             <h2>Get In Touch</h2>
-            <p>Questions? Text me. Seriously, I respond quickly.</p>
+            <p>Questions? Text me. I respond quickly.</p>
         </div>
         
         <div class="contact-grid">
